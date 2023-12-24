@@ -6,15 +6,25 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.metrics import dp
-from kivy.properties import ObjectProperty, StringProperty, NumericProperty
+from kivy.properties import ObjectProperty, StringProperty, NumericProperty, BooleanProperty
 
 class WidgetsExample(GridLayout):
     my_text = StringProperty("Hello")
     count = NumericProperty(0)
+    count_enabled = BooleanProperty(False)
     def on_button_clicked(self):
         print('Button clicked')
-        self.count = self.count + 1
-        self.my_text = f'Button clicked {self.count} times'
+        if self.count_enabled:
+            self.count = self.count + 1
+            self.my_text = f'Button clicked {self.count} times'
+    def on_toggle_button_state(self, widget):
+        print('Toggle state: ' + widget.state)
+        if widget.state == 'normal':
+            widget.text = 'OFF'
+            self.count_enabled = False
+        else:
+            widget.text = 'ON'
+            self.count_enabled = True
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
