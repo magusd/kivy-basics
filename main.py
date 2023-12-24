@@ -12,6 +12,7 @@ class WidgetsExample(GridLayout):
     my_text = StringProperty("Hello")
     count = NumericProperty(0)
     count_enabled = BooleanProperty(False)
+
     def on_button_clicked(self):
         print('Button clicked')
         if self.count_enabled:
@@ -25,6 +26,7 @@ class WidgetsExample(GridLayout):
         else:
             widget.text = 'ON'
             self.count_enabled = True
+            
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):

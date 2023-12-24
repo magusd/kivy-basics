@@ -16,6 +16,26 @@ WidgetsExample:
         font_name: "fonts/Lcd.ttf"
         font_size: "20dp"
         color: 1,0.5,1,1
+    
+    Switch:
+        id: my_switch
+        active: True
+        size_hint: None, 1
+        width: '100dp'
+
+    Slider:
+        id: my_slider
+        disabled: not my_switch.active
+        text:'text'
+        min:0
+        max:100
+        value:50
+        orientation: 'vertical'
+    
+    Label:
+        text: str(int(my_slider.value))
+        font_name: "fonts/Lcd.ttf"
+        font_size: "20dp"
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
