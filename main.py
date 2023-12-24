@@ -4,7 +4,18 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.stacklayout import StackLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.metrics import dp
+from kivy.properties import ObjectProperty, StringProperty, NumericProperty
+
+class WidgetsExample(GridLayout):
+    my_text = StringProperty("Hello")
+    count = NumericProperty(0)
+    def on_button_clicked(self):
+        print('Button clicked')
+        self.count = self.count + 1
+        self.my_text = f'Button clicked {self.count} times'
+
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
