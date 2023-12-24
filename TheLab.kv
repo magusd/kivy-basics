@@ -1,4 +1,29 @@
-MainWidget:
+BoxLayoutExample:
+
+<BoxLayoutExample>:
+    # orientation: 'vertical'
+    Button:
+        text:'A'
+        size_hint: None, None
+        size: '80dp','80dp'
+        pos_hint: {'x': .5}
+
+    BoxLayout:
+        orientation:'vertical'
+        spacing: '10dp'
+        Button:
+            text:'B1'
+        Button:
+            text:'B2'
+        Button:
+            text:'B3'
+        Button:
+            text:'B4'
+    Label:
+        text:'C'
+        size_hint: 1, None
+        height: '40dp'
+
 
 <MainWidget>:
     Button:
