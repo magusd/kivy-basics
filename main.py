@@ -26,6 +26,10 @@ class WidgetsExample(GridLayout):
         else:
             widget.text = 'ON'
             self.count_enabled = True
+    def on_text_validate(self, widget, label):
+        print('on_text_validate')
+        label.text = widget.text
+        print(label.xablau)
             
 
 class StackLayoutExample(StackLayout):

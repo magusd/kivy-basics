@@ -1,4 +1,17 @@
-WidgetsExample:
+ImagesExample:
+
+<ImagesExample@GridLayout>:
+    cols: 3
+    Image:
+        source: 'images/cake.jpg'
+    Image:
+        source: 'images/cake.jpg'
+        allow_stretch: True
+    Image:
+        source: 'images/cake.jpg'
+        fit_mode: 'fill'
+
+    
 
 <WidgetsExample>:
     cols: 3
@@ -40,6 +53,17 @@ WidgetsExample:
         ProgressBar:
             max:100
             value: my_slider.value 
+    TextInput:
+        id: my_text_input
+        size_hint: None,1
+        width: '100dp'
+        text: "foo"
+        multiline: False
+        on_text_validate: root.on_text_validate(self, my_label)
+    Label:
+        id: my_label
+        text: ""
+        xablau: "test"
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
