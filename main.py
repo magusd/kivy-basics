@@ -3,6 +3,17 @@ from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
+from kivy.uix.stacklayout import StackLayout
+from kivy.metrics import dp
+class StackLayoutExample(StackLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # self.orientation = 'rl-bt'
+        # self.padding = dp(10)
+        self.spacing = (dp(10),dp(20))
+        for i in range(15):
+            b = Button(text=str(i+1), size_hint=(None, None), size=(dp(100), dp(100)))
+            self.add_widget(b)
 
 class AnchorLayoutExample(AnchorLayout):
     pass
