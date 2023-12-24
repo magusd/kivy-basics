@@ -31,11 +31,15 @@ WidgetsExample:
         max:100
         value:50
         orientation: 'vertical'
-    
-    Label:
-        text: str(int(my_slider.value))
-        font_name: "fonts/Lcd.ttf"
-        font_size: "20dp"
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text: str(int(my_slider.value))
+            font_name: "fonts/Lcd.ttf"
+            font_size: "20dp"
+        ProgressBar:
+            max:100
+            value: my_slider.value 
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
