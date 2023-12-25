@@ -8,6 +8,9 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty, StringProperty, NumericProperty, BooleanProperty
 
+from kivy.graphics.vertex_instructions import (Rectangle, Ellipse, Line)
+from kivy.graphics.context_instructions import Color
+
 class CanvasExample1(Widget):
     pass
 class CanvasExample2(Widget):
@@ -15,7 +18,15 @@ class CanvasExample2(Widget):
 class CanvasExample3(Widget):
     pass
 class CanvasExample4(Widget):
-    pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        with self.canvas:
+            Line(points=(100,100,400,500,60,500), close=True, width=3)
+            Color(0,1,0,0.5, mode='rgba')
+            Line(circle=(400,200,50), width=2)
+            Line(rectangle=(700,500,150,100), width=5)
+            Rectangle(pos=(700,300), size=(150,100))
+
 class CanvasExample5(Widget):
     pass
 
