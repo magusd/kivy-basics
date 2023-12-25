@@ -1,5 +1,23 @@
 
-CanvasExample5:
+CanvasExample6:
+
+<CanvasExample6>:
+    BoxLayout:
+        size: root.size #needed when the layout isn't the root widget
+        Widget:
+            canvas:
+                Color: 
+                    rgba: 1, 0, 0, 1
+                Rectangle:
+                    size: self.size
+                
+        RelativeLayout:
+            canvas:
+                Color: 
+                    rgba: 0, 1, 0, 1
+                Rectangle:
+                    size: self.size
+                    
 
 <CanvasExample4>:
     Button:

@@ -62,6 +62,9 @@ class CanvasExample5(Widget):
         y += self.vy
         self.ball.pos = (x,y)
 
+class CanvasExample6(Widget):
+    pass
+
 class WidgetsExample(GridLayout):
     my_text = StringProperty("Hello")
     count = NumericProperty(0)
