@@ -8,6 +8,17 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty, StringProperty, NumericProperty, BooleanProperty
 
+class CanvasExample1(Widget):
+    pass
+class CanvasExample2(Widget):
+    pass
+class CanvasExample3(Widget):
+    pass
+class CanvasExample4(Widget):
+    pass
+class CanvasExample5(Widget):
+    pass
+
 class WidgetsExample(GridLayout):
     my_text = StringProperty("Hello")
     count = NumericProperty(0)
